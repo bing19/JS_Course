@@ -546,3 +546,32 @@ var keyFind = ['name', 'surname'];
 //     return (a < b) ? 1 : -1;
 //
 // }
+
+// Глава перебор массива
+
+// var arr = ["Есть", "жизнь", "на", "Марсе"];
+//
+// var arrLength = arr.map(function(item, i, arr){
+//
+//     return item.length;
+// });
+//
+// console.log( arrLength ); // 4,5,2,5
+
+
+var arr = [1,2,3,4,5];
+
+function getSums(arr) {
+
+    var result = [];
+
+    var totalSum = arr.reduce(function(sum, current){
+        result.push(sum);
+        return sum + current;
+    });
+    result.push(totalSum);
+
+    return result;
+}
+
+console.log( getSums(arr) );

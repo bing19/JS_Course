@@ -63,10 +63,10 @@ function d(c) {
 //
 // Напишите функцию `sum3` для суммирования 3 чисел:
 
-function sum3(a, b, c) {
-    c = c || 0;
-    return a + b + c;
-}
-
-d( sum3(1, 2, 3) );
-d( sum3(5, 10) );
+// function sum3(a, b, c) {
+//     c = c || 0;
+//     return a + b + c;
+// }
+//
+// d( sum3(1, 2, 3) );
+// d( sum3(5, 10) );
