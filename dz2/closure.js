@@ -216,38 +216,53 @@ var arr = [1, 2, 3, 4, 5, 6, 7];
 
 // Армия функций - сложная задача. Не догадался бы. Нужно пояснение.
 
-function makeArmy() {
+// function makeArmy() {
+//
+//     var shooters = [];
+//
+//     for (var i = 0; i < 10; i++) {
+//
+//         // var shooter = function me() { // функция-стрелок
+//         //
+//         //     console.log(me.i);
+//         //
+//         // };
+//         //
+//         // shooter.i = i;
+//
+//         var shooter = (function(i) { // функция-стрелок
+//
+//             return function() {
+//
+//                 console.log(i);
+//             }
+//
+//         }(i));
+//
+//
+//         shooters.push(shooter);
+//     }
+//
+//     return shooters;
+// }
+//
+// var army = makeArmy();
+//
+// console.log(army);
+// army[0](); // стрелок выводит 10, а должен 0
+// army[5](); // стрелок выводит 10...
 
-    var shooters = [];
-
-    for (var i = 0; i < 10; i++) {
-
-        // var shooter = function me() { // функция-стрелок
-        //
-        //     console.log(me.i);
-        //
-        // };
-        //
-        // shooter.i = i;
-
-        var shooter = (function(i) { // функция-стрелок
-
-            return function() {
-
-                console.log(i);
-            }
-
-        }(i));
-
-
-        shooters.push(shooter);
-    }
-
-    return shooters;
-}
-
-var army = makeArmy();
-
-console.log(army);
-army[0](); // стрелок выводит 10, а должен 0
-army[5](); // стрелок выводит 10...
+// var value = "Сюрприз";
+//
+// function f() {
+//     var value = Math.random();
+//
+//     function g() {
+//         debugger; // выполните в консоли alert( value ); Нет такой переменной!
+//     }
+//
+//     return g;
+// }
+//
+// var g = f();
+// g();
