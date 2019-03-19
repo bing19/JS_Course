@@ -1,41 +1,44 @@
-// var calculator = {
-//     num1: '',
-//     num2: '',
+
+
+
+
+// *********************************
+// ДЗ ИЗ 06FunctionsES6HomeWork
+// ********************************
+
+
+// var obj = [
+//     {name: 'CCC', age: 10},
+//     {name: 'BBB', age: 30},
+//     {name: 'AAA', age: 5}
+// ];
 //
-//     read: function() {
-//         this.num1 = +prompt('Введите число 1', 0);
-//         this.num2 = +prompt('Введите число 2', 0);
-//     },
 //
-//     sum: function() {
-//         return this.num1 + this.num2;
-//     },
+// let sortPublic = (obj, nameParam, boolParam = true) => {
+//     function sortAscending(paramA, paramB){
+//         return (paramA[nameParam] < paramB[nameParam]) ? -1 : 1;
+//     };
 //
-//     mul: function() {
-//         return this.num1 *this.num2;
+//     function sortDescending(paramA, paramB){
+//         return (paramA[nameParam] > paramB[nameParam]) ? -1 : 1;
+//     };
+//
+//     if(boolParam){
+//         obj.sort(sortAscending);
+//     }
+//     else {
+//         obj.sort(sortDescending);
 //     }
 //
 // };
 //
-// calculator.read();
-// console.log( calculator.sum() );
-// console.log( calculator.mul() );
+// sortPublic(obj, 'age');
+// console.log(obj);
 
 
 
-// var ladder = {
-//     step: 0,
-//     up: function() { // вверх по лестнице
-//         this.step++;
-//         return this;
-//     },
-//     down: function() { // вниз по лестнице
-//         this.step--;
-//         return this;
-//     },
-//     showStep: function() { // вывести текущую ступеньку
-//         console.log( this.step );
-//     }
-// };
-//
-// ladder.up().up().up().down().up().down().showStep();
+
+
+
+
+
