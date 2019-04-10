@@ -15,69 +15,76 @@ function c(a) {
 //
 // c(person);
 
+class Person {
 
-// function Person(name, surname, age, sex, salary, married) {
-//
-//     var name = name,
-//         surname = surname,
-//         age = age,
-//         sex = sex;
-//
-//     this.getName = function() {
-//         return name;
-//     };
-// }
-//
-// Person.prototype.isString = function (a) {
-//         if(typeof a == 'string') {
-//             return true;
-//         }
-//
-//
-// };
-//
-// Person.prototype.getName = function() {
-//        return name;
-// };
+    constructor(name, surname, age, sex, salary, married) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.sex = sex;
+    }
 
-// Person.prototype.getSex = function() {
-//         return sex;
-// };
-// Person.prototype.setName = function(b) {
-//         if(isString(b)) {
-//             name = b;
-//             return name;
-//         }
-//         alert('Неверный тип данных ' + b);
-//         return false;
-// };
-// Person.prototype.setFather = function(parent) {
-//         if(parent.getSex() == 'male') {
-//             this.father = parent;
-//         } else {
-//             this.mother = parent;
-//         }
-// Person.prototype.getFatherName = function() {
-//
-//     var parentName = this.father.getName();
-//
-//     if(sex == 'male') {
-//         return parentName +'ovich';
-//     }
-//     return parentName +'ovna';
-// };
+    isString(a) {
+        if(typeof a == 'string') {
+            return true;
+        }
+    }
+    getName() {
+        return this.name;
+    }
+    getSex() {
+        return this.sex;
+    }
+    setName(name) {
+        if(isString(b)) {
+            name = b;
+            return name;
+        }
+        alert('Неверный тип данных ' + b);
+        return false;
+    }
+    setFather(parent) {
+        if (parent.getSex() == 'male') {
+            this.father = parent;
+        } else {
+            this.mother = parent;
+        }
+    }
+    getFatherName() {
+        var parentName = this.father.getName();
+
+        if(this.sex == 'male') {
+            return parentName +'ovich';
+        }
+        return parentName +'ovna';
+    }
+    addChild(child) {
+        this.child = child;
+    }
+}
 
 
-// var son = new Person('John', 'Smith', 16, 'male');
-// var father = new Person("Ivan", "Petrov", 50, "male", 100500, true);
-// var dauther = new Person("Maria", "Petrova", 25, "female", 500, false);
-//
-// c(son.getName());
-// son.setFather(father);
-// dauther.setFather(father);
-// c( son.getFatherName() );
-// c( dauther.getFatherName() );
-// c( son.father.getName() );
+var son = new Person('John', 'Smith', 16, 'male');
+var father = new Person("Ivan", "Petrov", 50, "male", 100500, true);
+var dauther = new Person("Maria", "Petrova", 25, "female", 500, false);
+
+c(son.getName());
+son.setFather(father);
+dauther.setFather(father);
+father.addChild(dauther);
+c( son.getFatherName() );
+c( dauther.getFatherName() );
+c( son.father.getName() );
+c( father );
+
+
+
+
+
+
+
+
+
 
 
 
@@ -569,11 +576,11 @@ function c(a) {
 // clock.start();
 
 
-function Animal() {}
-
-function Rabbit() {}
-Rabbit.prototype = Object.create(Animal.prototype);
-
-var rabbit = new Rabbit();
-
-alert( rabbit.constructor == Rabbit ); // что выведет?
+// function Animal() {}
+//
+// function Rabbit() {}
+// Rabbit.prototype = Object.create(Animal.prototype);
+//
+// var rabbit = new Rabbit();
+//
+// alert( rabbit.constructor == Rabbit ); // что выведет?
