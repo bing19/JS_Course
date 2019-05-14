@@ -19,6 +19,9 @@ class MainPage {
     getReadButton() {
         return document.querySelector('#readButton');
     }
+    getPostsBlock() {
+        return document.querySelector('#posts');
+    }
 
     sendData(url, folder, file, data) {
         const options = {
@@ -37,18 +40,21 @@ class MainPage {
 
     }
 
-    readFile(url, filePath) {
+    async readFile(url, filePath) {
         const options = {
             method: 'POST',
             body: JSON.stringify({"filePath": filePath}),
             headers: {'Content-Type': 'application/json', Accept: 'application/json',}
         };
 
-        fetch(url, options)
+        let posts = await fetch(url, options)
             .then(res => res.json())
-            .then(res => { console.log(res) })
+            .then(res =>  res )
 
+        return posts;
         }
+
+
 }
 
 const mainPage = new MainPage();
@@ -64,7 +70,17 @@ mainPage.getWriteButton().addEventListener('click', (e) => {
 mainPage.getReadButton().addEventListener('click', (e) => {
     e.preventDefault();
     const filePath = mainPage.getFilePath();
-    mainPage.readFile('read', filePath);
+
+    (async function(){
+        let posts = await mainPage.readFile('read', filePath);
+
+        const postRoot = mainPage.getPostsBlock();
+        let div = document.createElement('ul');
+        div.innerHTML = `<li>${posts.title}</li><li>${posts.userId}</li>`;
+        postRoot.appendChild(div);
+    })()
+
+
 });
 
 
