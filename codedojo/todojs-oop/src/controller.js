@@ -4,7 +4,7 @@ class Controller {
         this.view = view;
 
         this.view.on('add', this.addTodo.bind(this));
-        this.view.on('toggle', this.toggleTodo.bind(this));
+        this.unsubcribeToggle = this.view.on('toggle', this.toggleTodo.bind(this)); // Тестировал отписку.
         this.view.on('edit', this.editTodo.bind(this));
         this.view.on('remove', this.removeTodo.bind(this));
 

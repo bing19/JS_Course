@@ -26,6 +26,11 @@ class EventEmitter {
     on(type, callback) {
         this.events[type] = this.events[type] || [];
         this.events[type].push(callback);
+
+        return () => {
+            console.log('Отписались');
+            this.events[type] = this.events[type].filter( fn => callback !== fn);
+        }
     }
 
     emit(type, args) {
